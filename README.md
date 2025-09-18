@@ -13,11 +13,10 @@ to [contact the Payfast support team](https://payfast.io/contact/) should you re
    **[gravityformspayfast.zip](https://github.com/Payfast/gravityforms-aggregation/releases/download/v1.8.0/gravityformspayfast.zip)**.
 4. Click **Install Now**.
 5. Click **Activate Plugin**.
-   5. Go to **Forms** -> **Settings**, under **Default Currency**, select **South African Rand** and click 
-   **Save Settings**.
-6. You will then need to create a form with options included from the **Pricing Fields** section and click **Save**.
-7. Go to **Forms** -> **Settings** -> **Payfast**, and add feed settings for Payfast per form.
-8. Complete the Payfast settings as required, and select **Mode** -> **Test** for testing purposes.
+6. Go to **Forms** -> **Settings**, under **Default Currency**, select **South African Rand** and click **Save Settings**.
+7. You will then need to create a form with options included from the **Pricing Fields** section and click **Save**.
+8. Go to **Forms** -> **Settings** -> **Payfast**, and add feed settings for Payfast per form.
+9. Complete the Payfast settings as required, and select **Mode** -> **Test** for testing purposes.
 
 Please [click here](https://payfast.io/integration/plugins/gravity-forms/) for more information concerning this
 module.
