@@ -1,6 +1,17 @@
 # Changelog
 
-## [1.7.0](https://github.com/Payfast/mod-gravityforms/releases/tag/v1.7.0)
+## [1.8.0](https://github.com/Payfast/gravityforms-aggregation/releases/tag/v1.8.0)
+
+### Added
+
+- Updated Common Library to version 1.4.0.
+- Revised configuration branding to Payfast Aggregation.
+
+### Fixed
+
+- Resolved an issue where certain subscription forms were failing to process payments.
+
+## [1.7.0](https://github.com/Payfast/gravityforms-aggregation/releases/tag/v1.7.0)
 
 ### Added
 
@@ -8,7 +19,7 @@
   performance and security.
 - Upgraded Payfast Common Library to version 1.4.0.
 
-## [1.6.0](https://github.com/Payfast/mod-gravityforms/releases/tag/v1.6.0)
+## [1.6.0](https://github.com/Payfast/gravityforms-aggregation/releases/tag/v1.6.0)
 
 ### Added
 
@@ -16,7 +27,7 @@
 - Code standards for PHP 8.2.
 - Updated the Payfast Common Library.
 
-## [1.5.5](https://github.com/Payfast/mod-gravityforms/releases/tag/v1.5.5)
+## [1.5.5](https://github.com/Payfast/gravityforms-aggregation/releases/tag/v1.5.5)
 
 ### Added
 
@@ -26,7 +37,7 @@
 
 - Improved compatibility with other gateways.
 
-## [1.5.4](https://github.com/Payfast/mod-gravityforms/releases/tag/v1.5.4)
+## [1.5.4](https://github.com/Payfast/gravityforms-aggregation/releases/tag/v1.5.4)
 
 ### Added
 
@@ -42,7 +53,7 @@
 
 - Bug fixes and improvements.
 
-## [1.5.3](https://github.com/Payfast/mod-gravityforms/releases/tag/v1.5.3)
+## [1.5.3](https://github.com/Payfast/gravityforms-aggregation/releases/tag/v1.5.3)
 
 ### Added
 

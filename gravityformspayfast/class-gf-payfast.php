@@ -22,8 +22,8 @@ class GFPayFast extends GFPaymentAddOn
     protected $_path = 'gravityformspayfast/payfast.php';
     protected $_full_path = __FILE__;
     protected $_url = 'http://www.gravityforms.com';
-    protected $_title = 'Gravity Forms Payfast Add-On';
-    protected $_short_title = 'Payfast';
+    protected $_title = 'Gravity Forms Payfast Aggregation Add-On';
+    protected $_short_title = 'Payfast Aggregation';
     protected $_supports_callbacks = true;
     protected $_capabilities = array('gravityforms_payfast', 'gravityforms_payfast_uninstall');
     // Members plugin integration
@@ -35,7 +35,7 @@ class GFPayFast extends GFPaymentAddOn
     // Automatic upgrade enabled
     private $productionUrl = 'https://www.payfast.co.za/eng/process/';
     private $sandboxUrl = 'https://sandbox.payfast.co.za/eng/process/';
-    private $_pf_gf_module_ver = '1.7.0';
+    private $_pf_gf_module_ver = '1.8.0';
 
     public static function get_instance()
     {
@@ -122,7 +122,7 @@ class GFPayFast extends GFPaymentAddOn
         if (!rgar($settings, 'gf_payfast_configured')) {
             return sprintf(
             // translators: 1: opening anchor tag to Payfast settings, 2: closing anchor tag.
-                __('To get started, configure your %1$sPayfast Settings%2$s!', 'gravityformspayfast'),
+                __('To get started, configure your %1$sPayfast Aggregation Settings%2$s!', 'gravityformspayfast'),
                 '<a href="' . admin_url('admin.php?page=gf_settings&subview=' . $this->_slug) . '">',
                 '</a>'
             );
@@ -1039,12 +1039,12 @@ class GFPayFast extends GFPaymentAddOn
             <h1><?php
                 printf(
                 // translators: %1$s and %s are the opening and closing <h1> tags for the Payfast link.
-                    esc_html__('Payfast Add-On v%s', 'gravityformspayfast'),
+                    esc_html__('Payfast Aggregation Add-On v%s', 'gravityformspayfast'),
                     esc_html($this->_pf_gf_module_ver)
                 ) ?></h1>
             <div class="about-text"><?php
                 esc_html_e(
-                    'Thank you for updating! The new version of the Gravity Forms Payfast Add-On makes changes to how you manage your Payfast integration.',
+                    'Thank you for updating! The new version of the Gravity Forms Payfast Aggregation Add-On makes changes to how you manage your Payfast integration.',
                     'gravityformspayfast'
                 ) ?></div>
             <div class="changelog">
@@ -1052,10 +1052,10 @@ class GFPayFast extends GFPaymentAddOn
                 <div class="feature-section col two-col">
                     <div class="col-1">
                         <h3><?php
-                            esc_html_e('Manage Payfast Contextually', 'gravityformspayfast') ?></h3>
+                            esc_html_e('Manage Payfast Aggregation Contextually', 'gravityformspayfast') ?></h3>
                         <p><?php
                             esc_html_e(
-                                'Payfast Feeds are now accessed via the Payfast sub-menu within the Form Settings for the Form you would like to integrate Payfast with.',
+                                'Payfast Aggregation Feeds are now accessed via the Payfast Aggregation sub-menu within the Form Settings for the Form you would like to integrate Payfast Aggregation with.',
                                 'gravityformspayfast'
                             ) ?></p>
                     </div>
@@ -1156,7 +1156,7 @@ class GFPayFast extends GFPaymentAddOn
         ?>
         <div id="edit_payment_status_details" style="display:block">
             <table>
-                <caption>Edit Payfast payment status details</caption>
+                <caption>Edit Payfast Aggregation payment status details</caption>
                 <tr>
                     <th scope="col">Payment Information</th>
                 </tr>
@@ -1648,12 +1648,13 @@ class GFPayFast extends GFPaymentAddOn
                             $amountGross,
                             $paymentId
                         ),
+
                     ];
 
                     $payfastRequest->pflog('- Log subscription payment');
                     $this->insertTransaction($paymentId, 'payment', $transactionId, $action['amount']);
                     $payfastRequest->pflog('- Log subscription payment');
-                    GFFormsModel::add_note($paymentId, 0, 'Payfast', $action['note'], 'success');
+                    GFFormsModel::add_note($paymentId, 0, 'Payfast Aggregation', $action['note'], 'success');
                 }
                 $this->sendNotifications(
                     $sendAdminMail,
@@ -1678,7 +1679,7 @@ class GFPayFast extends GFPaymentAddOn
                     $pfData['m_payment_id']
                 );
                 GFAPI::update_entry_property($pfData['m_payment_id'], 'payment_status', 'Cancelled');
-                GFFormsModel::add_note($pfData['m_payment_id'], 0, 'Payfast', $note, 'Cancelled');
+                GFFormsModel::add_note($pfData['m_payment_id'], 0, 'Payfast Aggregation', $note, 'Cancelled');
 
                 // Perform any custom actions
                 do_action('gform_payfast_payment_cancelled', $pfData);

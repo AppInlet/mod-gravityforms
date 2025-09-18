@@ -201,34 +201,38 @@ class PfGfUtilities
                 'custom_str4'       => gmdate('Y-m-d'),
                 'subscription_type' => 1,
                 'billing_date'      => gmdate('Y-m-d'),
+            ]);
+
+
+        $recurringAmountField = $meta['recurring_amount_field'] ?? null;
+
+        if ($recurringAmountField !== 'form_total') {
+            if (!empty($entry[$recurringAmountField . '.2'])) {
+                // Case: Specific recurring amount field with decimal value
+                $varArray['recurring_amount'] = str_replace(
+                    ",",
+                    "",
+                    substr($entry[$recurringAmountField . '.2'], 1)
+                );
+            } elseif (!empty($entry[$recurringAmountField])) {
+                // Case: Specific recurring amount field without decimal value
+                $varArray['recurring_amount'] = substr(
+                    $entry[$recurringAmountField],
+                    strpos($entry[$recurringAmountField], '|') + 1
+                );
+            } else {
+                // Fallback to order total
+                $varArray['recurring_amount'] = GFCommon::get_order_total($form, $entry);
+            }
+        } else {
+            // Case: Recurring amount is based on form total
+            $varArray['recurring_amount'] = GFCommon::get_order_total($form, $entry);
+        }
+
+        $varArray = array_merge($varArray, [
                 'frequency'         => rgar($meta, 'frequency'),
                 'cycles'            => rgar($meta, 'cycles'),
             ]);
-
-            $recurringAmountField = $meta['recurring_amount_field'] ?? null;
-
-            if ($recurringAmountField !== 'form_total') {
-                if (!empty($entry[$recurringAmountField . '.2'])) {
-                    // Case: Specific recurring amount field with decimal value
-                    $varArray['recurring_amount'] = str_replace(
-                        ",",
-                        "",
-                        substr($entry[$recurringAmountField . '.2'], 1)
-                    );
-                } elseif (!empty($entry[$recurringAmountField])) {
-                    // Case: Specific recurring amount field without decimal value
-                    $varArray['recurring_amount'] = substr(
-                        $entry[$recurringAmountField],
-                        strpos($entry[$recurringAmountField], '|') + 1
-                    );
-                } else {
-                    // Fallback to order total
-                    $varArray['recurring_amount'] = GFCommon::get_order_total($form, $entry);
-                }
-            } else {
-                // Case: Recurring amount is based on form total
-                $varArray['recurring_amount'] = GFCommon::get_order_total($form, $entry);
-            }
         }
 
         return array($varArray, $entry);

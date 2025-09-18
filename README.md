@@ -1,8 +1,8 @@
-# mod-gravityforms
+# gravityforms-aggregation
 
-## Payfast module v1.7.0 for Gravity Forms v2.9.13
+## Payfast Aggregation module v1.8.0 for Gravity Forms v2.9.17
 
-This is the Payfast module for Gravity Forms. Please feel free
+This is the Payfast Aggregation module for Gravity Forms. Please feel free
 to [contact the Payfast support team](https://payfast.io/contact/) should you require any assistance.
 
 ## Installation
@@ -10,7 +10,7 @@ to [contact the Payfast support team](https://payfast.io/contact/) should you re
 1. Log in to your WordPress Admin panel.
 2. Navigate to **Plugins > Add New > Upload Plugin**.
 3. Click **Choose File** and select
-   **[gravityformspayfast.zip](https://github.com/Payfast/mod-gravityforms/releases/download/v1.7.0/gravityformspayfast.zip)**.
+   **[gravityformspayfast.zip](https://github.com/Payfast/gravityforms-aggregation/releases/download/v1.8.0/gravityformspayfast.zip)**.
 4. Click **Install Now**.
 5. Click **Activate Plugin**.
    5. Go to **Forms** -> **Settings**, under **Default Currency**, select **South African Rand** and click 
