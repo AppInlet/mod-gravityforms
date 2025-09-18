@@ -4,7 +4,6 @@
 
 ### Added
 
-- Updated Common Library to version 1.4.0.
 - Revised configuration branding to Payfast Aggregation.
 
 ### Fixed
