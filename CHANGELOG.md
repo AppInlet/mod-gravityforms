@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.8.0](https://github.com/Payfast/mod-gravityforms/releases/tag/v1.8.0)
+
+### Added
+
+- Updated Common Library to version 1.4.0.
+- Revised configuration branding to Payfast Aggregation.
+
+### Fixed
+
+- Resolved an issue where certain subscription forms were failing to process payments.
+
 ## [1.7.0](https://github.com/Payfast/mod-gravityforms/releases/tag/v1.7.0)
 
 ### Added
